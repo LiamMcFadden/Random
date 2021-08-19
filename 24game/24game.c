@@ -15,8 +15,8 @@ main(char *argv[], int argc)
     
     printf("\n\n\t\t\t\t*___The 24 Game___*\n\n\n");
     char welcome[600] = "\tEnter an expression that (numerically) evaluates to 24. Only\n\tmulitiplication, division, addition, and subtraction are allowed.\n\tDivision should use floating point or rational arithmetic, etc, to \n\tpreserve remainders.Brackets are allowed. Forming multiple digit\n\tnumbers from the provided numbers is not allowed. The order of the\n\tdigits does not have to be preserved.\n\n\tCommands:\n\t\t'nums': see your four numbers again\n\t\t'help': see this message again\n\t\t'clear': clear the screen\n\t\t'new': generate a new set of numbers\n\t\t'exit': leave the game\n";
-    char div[100] = "*------------------------------------------------------------------------------*\n";
-    printf("%s%s%s", div, welcome, div);
+    char separator[100] = "*------------------------------------------------------------------------------*\n";
+    printf("%s%s%s", separator, welcome, separator);
     
     // generate random digits
     printf(" > ");
