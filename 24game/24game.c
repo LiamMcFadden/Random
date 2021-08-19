@@ -33,23 +33,29 @@ main(char *argv[], int argc)
             exit(EXIT_FAILURE);
         }
         
-        /* check for help commands */
-
+        /**********************/
+        /* check for commands */
+        /**********************/
         // print original message
         if (!strcmp(buf, "help\n"))
             printf("%s", welcome);
+
         // print the current numbers
         else if (!strcmp(buf, "nums\n")) {
             for (int i = 0; i < 4; i++)
                 printf("{ %d }", digits[i]);
             printf("\n");
         }
+
         // clear the screen
         else if (!strcmp(buf, "clear\n"))
             clear();
+
         // generate a new set of numbers
         else if (!strcmp(buf, "new\n"))
             nums(digits, 1);
+        
+        // exit the game
         else if (!strcmp(buf, "exit\n")) {
             printf("You solved %d sets! Bye.\n", score);
             exit(EXIT_SUCCESS);
