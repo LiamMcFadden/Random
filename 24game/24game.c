@@ -3,6 +3,7 @@
 #include <string.h>
 
 static void clear();
+static void spaces(char * s);
 static void nums(int digits[], int print_flag);
 
 int 
@@ -60,6 +61,12 @@ main(char *argv[], int argc)
             printf("You solved %d sets! Bye.\n", score);
             exit(EXIT_SUCCESS);
         }
+        
+        /************************/
+        /* Parse the expression */
+        /************************/
+        // remove all spaces
+		spaces(buf);
 
     }
 } 
@@ -89,4 +96,16 @@ nums(int digits[], int print_flag)
         
     }
     if (print_flag) printf("\n");
+}
+
+
+
+/*
+ * Removes all spaces from a string
+ */
+static void 
+spaces(char* s) 
+{
+	char* d = s;
+    while (*s++ = *d++){ while (*d == ' ') d++; };
 }
