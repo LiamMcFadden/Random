@@ -68,6 +68,20 @@ main(char *argv[], int argc)
         // remove all spaces
 		spaces(buf);
 
+        // get indices of operators/brackets
+        int plus[20], sub[20], mult[20], div[20], bracket[20];
+        // { p. idx, s. idx, m. idx, d. idx, b. idx }
+        int idx[5] = { 0, 0, 0, 0, 0 };
+
+        char *p = buf;
+        for (int i = 0; *p; p++) {
+            if (*p == '+') plus[idx[0]++] = i;
+            else if (*p == '-') sub[idx[1]++] = i;
+            else if (*p == '*') sub[idx[2]++] = i;
+            else if (*p == '/') sub[idx[3]++] = i;
+            else if (*p == '[' || *p == ']') bracket[idx[4]++] = i;
+            i++;
+        }
     }
 } 
 
@@ -109,3 +123,15 @@ spaces(char* s)
 	char* d = s;
     while (*s++ = *d++){ while (*d == ' ') d++; };
 }
+
+
+
+
+
+
+
+
+
+
+
+
